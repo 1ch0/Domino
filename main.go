@@ -10,9 +10,11 @@ import "net/http"
 import "hades/framework"
 
 func main() {
+	core := framework.NewCore()
+	registerRouter(core)
 	server := &http.Server{
 		Handler: framework.NewCore(),
-		Addr: ':8080',
+		Addr:    ":8888",
 	}
 	server.ListenAndServe()
 
